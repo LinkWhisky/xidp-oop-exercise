@@ -1,7 +1,7 @@
 package practice10;
 
 public class Klass {
-    private int number;
+    private final int number;
 
     private Student leader;
 
@@ -39,10 +39,7 @@ public class Klass {
     }
 
     public boolean isIn (Student student) {
-        if (this.equals(student.getKlass())) {
-            return true;
-        }
-        return false;
+        return this.equals(student.getKlass());
     }
 
 }
