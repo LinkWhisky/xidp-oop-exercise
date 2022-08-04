@@ -1,13 +1,15 @@
 package practice06;
 
-public class Teacher extends Person {
-    private int klass;
+import java.util.Objects;
 
-    public Teacher(String name, int age) {
+public class Teacher extends Person {
+    private Integer klass;
+
+    public Teacher(String name, Integer age) {
         super(name, age);
     }
 
-    public Teacher(String name, int age, int klass) {
+    public Teacher(String name, int age, Integer klass) {
         super(name, age);
         this.klass = klass;
     }
@@ -16,12 +18,12 @@ public class Teacher extends Person {
         return klass;
     }
 
-    public void setKlass(int klass) {
+    public void setKlass(Integer klass) {
         this.klass = klass;
     }
     @Override
     public String introduce() {
-        if (klass == 0) {
+        if (Objects.isNull(klass)) {
             return super.introduce() + " I am a Teacher. I teach No Class.";
         }
         return super.introduce() + " I am a Teacher. I teach Class "+ klass +".";
